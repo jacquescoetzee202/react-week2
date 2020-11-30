@@ -6,7 +6,6 @@ class SignUp extends Component {
         super(props);
 
         this.state = {
-            valid: false,
             passwordInput: "",
             confirmInput: "",
         }
@@ -14,40 +13,40 @@ class SignUp extends Component {
         this.confirmHandler =  this.confirmHandler.bind(this);
     }
 
-    passwordHandler(value) {
-        const { minimumLength } = this.props;
-        if(value.length >= minimumLength) {
-            this.setState({ 
-                passwordInput: value,
-                valid: value === this.state.confirmInput,
-            });
-        }
-        console.log(value);
+    passwordHandler(event) {
+        this.setState({ 
+            passwordInput: event.currentTarget.value,
+        });
     }
     
-    confirmHandler(value) {
-        const { minimumLength } = this.props;
-        if(value.length >= minimumLength) {
-            this.setState({ 
-                confirmInput: value,
-                valid: value === this.state.passwordInput,
-            });
-        }
-        console.log(value);
+    confirmHandler(event) {
+        this.setState({ 
+            confirmInput: event.currentTarget.value,
+        });
     }
 
     render() {
+        const { passwordInput, confirmInput } = this.state;
+        const { minimumLength } = this.props;
+
+        const matchingCheck = passwordInput === confirmInput;
+        const lengthCheck = passwordInput.length >= minimumLength;
+
+        const validBool = matchingCheck && lengthCheck;
+
         return(
             <div className="container">
                 <Password 
                     label="Password"
-                    handleChangeSubmit={ this.passwordHandler }
-                    valid={ this.state.valid }
+                    inputValue={ passwordInput }
+                    handleChange={ this.passwordHandler }
+                    valid={ validBool }
                 />
                 <Password 
                     label="Confirm Password"
-                    handleChangeSubmit={ this.confirmHandler }
-                    valid={ this.state.valid }
+                    inputValue={ confirmInput }
+                    handleChange={ this.confirmHandler }
+                    valid={ validBool }
                 />
             </div>
         );
