@@ -1,7 +1,11 @@
+import Squares from "./lifting-state/Squares";
 
 function App() {
   return (
-    <h1>Hello World</h1>
+    <div className="container" >
+      <h1 className="p-3 mb-2 bg-info text-white" >Hello World</h1>
+      <Squares />
+    </div>
   );
 }
 
