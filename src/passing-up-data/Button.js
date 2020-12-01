@@ -29,7 +29,7 @@ class Button extends Component {
                 className="btn btn-success container mt-3"
                 onClick={ this.handleClick }
             >
-                Click Me!!! --> current count : {count}
+                Click Me!!! current count : {count}
             </button>
         );
     }
