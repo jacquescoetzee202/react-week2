@@ -48,9 +48,7 @@ class Form extends Component {
 
     render() {
         
-        let { name, email } = this.state;
         let { fields } = this.props;
-
 
         return(
             
