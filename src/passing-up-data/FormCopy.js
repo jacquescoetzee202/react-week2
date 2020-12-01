@@ -27,35 +27,22 @@ class Form extends Component {
     }
 
     handleFormSubmit(event) {
-        
+    
         event.preventDefault();
 
         let { handleSubmit, fields } = this.props;
-        let { name, email } = this.state;
+        
+        //passing the current state to the handleSubmit function
+        handleSubmit(this.state);
 
-        let fieldNames = fields.map((input) => {
-            return input.name;
-        });
+        // creating an object with same keys as state and values as empty strings
+        let resetStateObj = fields.reduce((obj, input) => {
+            obj[input.name] = "";
+            return obj;
+        },{});
 
-        console.log(fieldNames);
-
-
-        let loginObj = {
-            name: name,
-            email: email,
-        }
-
-
-        handleSubmit(loginObj);
-
-        this.props.fields.forEach(obj =>
-            this.state[obj.name] = "",
-        );
-
-        this.setState({
-            nameInput: "",
-            emailInput: "",
-        });
+        // reseting the state to empty values object
+        this.setState(resetStateObj);
 
     }
 
