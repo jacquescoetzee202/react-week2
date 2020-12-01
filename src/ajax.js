@@ -8,14 +8,20 @@ axios.get("/articles").then(({data}) => {
 
 */
 
-/* || Q2
+// || Q2
 
-axios.post("/articles", {
-    "title": "AJAX",
-    "content": "my first AJAX post request",
-    "tags": ["motivational"]
-}).then(({data}) => {
-    console.log(data.data.id);
-});
+// axios.post("/articles", {
+//     "title": "AJAX",
+//     "content": "my first AJAX post request",
+//     "tags": ["motivational"]
+// }).then(({data}) => {
+//     console.log(data.data.id);
+// });
 
-*/
+// || Q3 Fetch one of your articles from the API and console.log()
+
+// axios.get("/articles/85").then(({data}) => {
+//     console.log(data.data);
+// });
+
+
