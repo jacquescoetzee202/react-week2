@@ -39,14 +39,11 @@ class Form extends Component {
 
         handleSubmit(loginObj);
 
-<<<<<<< HEAD
         this.setState({
             nameInput: "",
             emailInput: "",
         });
 
-=======
->>>>>>> db033051c274cb60e08263aa8f2b8e7ee6e8b3a4
         event.preventDefault();
     }
 

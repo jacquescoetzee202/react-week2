@@ -2,10 +2,7 @@ import SignUp from "./lifting-state/SignUp";
 import Squares from "./lifting-state/Squares";
 import Button from "./passing-up-data/Button";
 import Form from "./passing-up-data/Form";
-<<<<<<< HEAD
 import FormCopy from "./passing-up-data/FormCopy";
-=======
->>>>>>> db033051c274cb60e08263aa8f2b8e7ee6e8b3a4
 
 function App() {
   return (
@@ -15,7 +12,6 @@ function App() {
       <SignUp minimumLength={ 5 }/>
       <Button handleUpdate={ (value) => console.log(value) } />
       <Form handleSubmit={ (value) => console.log(value) } />
-<<<<<<< HEAD
       <FormCopy
     handleSubmit={ (value) => console.log(value) }
     fields={ [
@@ -25,8 +21,6 @@ function App() {
         { label: "Date of Birth", name: "dob", type: "date" },
     ]}
 />
-=======
->>>>>>> db033051c274cb60e08263aa8f2b8e7ee6e8b3a4
     </div>
   );
 }
