@@ -24,12 +24,20 @@ class Form extends Component {
             return obj;
         });
 
-        console.log("triggered input change");
     }
 
     handleFormSubmit(event) {
-        let { handleSubmit } = this.props;
+        
+        event.preventDefault();
+
+        let { handleSubmit, fields } = this.props;
         let { name, email } = this.state;
+
+        let fieldNames = fields.map((input) => {
+            return input.name;
+        });
+
+        console.log(fieldNames);
 
 
         let loginObj = {
@@ -37,9 +45,18 @@ class Form extends Component {
             email: email,
         }
 
+
         handleSubmit(loginObj);
 
-        event.preventDefault();
+        this.props.fields.forEach(obj =>
+            this.state[obj.name] = "",
+        );
+
+        this.setState({
+            nameInput: "",
+            emailInput: "",
+        });
+
     }
 
     render() {
@@ -47,23 +64,24 @@ class Form extends Component {
         let { name, email } = this.state;
         let { fields } = this.props;
 
-        console.log(fields);
-
 
         return(
+            
+
             <form onSubmit={ this.handleFormSubmit } className="containter" >
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input 
-                        className="form-control" 
-                        id="email" 
-                        name="email" 
-                        type="email"
-                        onChange={ this.inputChange }
-                        value={ email }
-                    />
-                </div>
-                <Input inputChange={ this.inputChange } value={ this.state.name }/>
+                {fields.map((input, index) => {
+                    let { label, name, type } = input;
+                    return (
+                        <Input 
+                            inputChange={ this.inputChange }
+                            value={ this.state[name] }
+                            label={ label }
+                            type={ type }
+                            name={ name }
+                            key={ index }
+                        />
+                    );
+                })}
                 <input
                     className="btn btn-info container mt-3 mb-3"
                     type="submit"
