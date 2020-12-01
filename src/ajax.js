@@ -1,3 +1,10 @@
 import axios from "./axios-config";
 
-console.log("boo");
+/* || Q1
+
+axios.get("/articles").then(({data}) => {
+    console.log(data.data);
+})
+
+*/
+
