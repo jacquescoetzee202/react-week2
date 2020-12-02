@@ -27,7 +27,6 @@ class Articles extends Component {
 
         return(
             <>
-                <h1 className="p-3 mb-2 bg-info text-white" >Blogtastic</h1>
                 { !loaded ? <p>Loading....</p> : 
                     <ul className="list-group">
                         {articles.map((article, index) => {
