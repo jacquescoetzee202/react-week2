@@ -37,7 +37,7 @@ class Articles extends Component {
                                     id={ id }
                                     title={ title }
                                     tags={ tags }
-                                    key={ index }
+                                    key={ id }
                                 />
                             );
                         })}

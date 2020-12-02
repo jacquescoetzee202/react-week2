@@ -5,6 +5,7 @@ import Squares from "./lifting-state/Squares";
 import Button from "./passing-up-data/Button";
 import FormCopy from "./passing-up-data/FormCopy";
 import Articles from "./news/Articles";
+import Article from "./news/Article";
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
           <Route exact path="/news">
             <Articles/>
           </Route>
+          <Route path="/news/:id" render={({ match }) => (
+            <Article id={ match.params.id }/>
+          )}/>
         </Switch>
       </div>
     </Router>
