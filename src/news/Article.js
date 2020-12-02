@@ -1,5 +1,6 @@
 import { Component } from "react";
 import axios from "../axios-config";
+import Tag from "./Tag";
 
 
 class Article extends Component {
@@ -8,7 +9,7 @@ class Article extends Component {
 
         this.state = {
             loaded: false,
-            article: null,
+            article: {},
         }
     }
 
@@ -24,10 +25,26 @@ class Article extends Component {
 
     render() {
         let { article, loaded } = this.state;
+        let { title, content, tags } = article;
 
         return(
             <>
-                { !loaded ? <p>Loading....</p> : <p>{ article.id }</p> }
+                { !loaded ? <p>Loading....</p> : 
+                    <div className="containter">
+                        <h2>{ title }</h2>
+                        <p>{ content }</p>
+                        <div className="d-flex justify-content-end">
+                            {tags.map((tag, index) => {
+                                return (
+                                    <Tag
+                                        tag={ tag }
+                                        key={ index }
+                                    />
+                                );
+                            })}
+                        </div> 
+                    </div>
+                }
             </>
         );
     }
