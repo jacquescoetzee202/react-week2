@@ -2,6 +2,7 @@ import SignUp from "./lifting-state/SignUp";
 import Squares from "./lifting-state/Squares";
 import Button from "./passing-up-data/Button";
 import FormCopy from "./passing-up-data/FormCopy";
+import Articles from "./news/Articles";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           { label: "Date of Birth", name: "dob", type: "date" },
         ]}
       />
+      <Articles/>
     </div>
   );
 }
