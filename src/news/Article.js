@@ -1,6 +1,7 @@
 import { Component } from "react";
 import axios from "../axios-config";
 import Tag from "./Tag";
+import Comments from "./Comments";
 
 
 class Article extends Component {
@@ -25,7 +26,7 @@ class Article extends Component {
 
     render() {
         let { article, loaded } = this.state;
-        let { title, content, tags } = article;
+        let { title, content, tags, id } = article;
 
         return(
             <>
@@ -42,8 +43,10 @@ class Article extends Component {
                                     />
                                 );
                             })}
-                        </div> 
+                        </div>
+                        <Comments articleID={ id }/> 
                     </div>
+
                 }
             </>
         );
