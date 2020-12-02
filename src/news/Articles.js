@@ -1,7 +1,8 @@
 import { Component } from "react";
 import axios from "../axios-config";
+import Article from "./Article";
 
-class Article extends Component {
+class Articles extends Component {
     constructor() {
         super();
 
@@ -26,9 +27,12 @@ class Article extends Component {
         let { loaded, articles } =  this.state;
 
         return(
-            <p>{loaded ? articles[0].id : "Loading....." }</p>
+            <>
+                <p>{loaded ? articles[0].id : "Loading....." }</p>
+                <Article />
+            </>
         );
     }
 }
 
-export default Article;
+export default Articles;
