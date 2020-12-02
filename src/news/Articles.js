@@ -1,6 +1,7 @@
 import { Component } from "react";
 import axios from "../axios-config";
 import Tag from "./Tag";
+import { Link } from "react-router-dom";
 
 class Articles extends Component {
     constructor() {
@@ -31,12 +32,13 @@ class Articles extends Component {
                     <ul className="list-group">
                         {articles.map( article => {
                             let { id, title, tags } = article;
+                            let route = `/news/${id}`;
                             return (
                                 <li 
                                     className="list-group-item d-flex justify-content-between align-items-center"
                                     key={ id }
                                 >
-                                    { title }
+                                    <Link to={ route }>{ title }</Link> 
                                     <div>
                                         {tags.map((tag, index) => {
                                             return (
