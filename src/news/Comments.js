@@ -13,7 +13,6 @@ class Comments extends Component {
     componentDidMount() {
         axios.get(`/articles/${this.props.articleID}/comments`).then(({data}) => {
             let comments = data.data;
-            console.log(comments);
             this.setState({
                 loaded: true,
                 comments: comments,
