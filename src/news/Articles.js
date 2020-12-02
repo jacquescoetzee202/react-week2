@@ -1,6 +1,6 @@
 import { Component } from "react";
 import axios from "../axios-config";
-import ArticleLi from "./ArticleLi";
+import Tag from "./Tag";
 
 class Articles extends Component {
     constructor() {
@@ -29,15 +29,25 @@ class Articles extends Component {
             <>
                 { !loaded ? <p>Loading....</p> : 
                     <ul className="list-group">
-                        {articles.map((article, index) => {
+                        {articles.map( article => {
                             let { id, title, tags } = article;
                             return (
-                                <ArticleLi
-                                    id={ id }
-                                    title={ title }
-                                    tags={ tags }
+                                <li 
+                                    className="list-group-item d-flex justify-content-between align-items-center"
                                     key={ id }
-                                />
+                                >
+                                    { title }
+                                    <div>
+                                        {tags.map((tag, index) => {
+                                            return (
+                                                <Tag
+                                                    tag={ tag }
+                                                    key={ index }
+                                                />
+                                            );
+                                        })}
+                                    </div>
+                                </li>
                             );
                         })}
                     </ul>
