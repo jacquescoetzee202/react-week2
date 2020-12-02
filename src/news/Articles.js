@@ -29,7 +29,7 @@ class Articles extends Component {
         return(
             <>
                 <p>{loaded ? articles[0].id : "Loading....." }</p>
-                <ul class="list-group">
+                <ul className="list-group">
                     {articles.map((article, index) => {
                         let { id, title, tags } = article;
                         return (
