@@ -1,6 +1,6 @@
 import { Component } from "react";
 import axios from "../axios-config";
-import Article from "./Article";
+import ArticleLi from "./ArticleLi";
 
 class Articles extends Component {
     constructor() {
@@ -33,7 +33,7 @@ class Articles extends Component {
                         {articles.map((article, index) => {
                             let { id, title, tags } = article;
                             return (
-                                <Article
+                                <ArticleLi
                                     id={ id }
                                     title={ title }
                                     tags={ tags }
