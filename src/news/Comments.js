@@ -26,7 +26,7 @@ class Comments extends Component {
 
         return(
             <>
-                <h3>Comments</h3>
+                { comments.length > 0 ? <h3>Comments</h3> : <h3>Be the first to comment!</h3> }
                 { !loaded ? <p>Loading comments....</p> : 
                     <ul className="list-group">
                         {comments.map( commentObj => {
