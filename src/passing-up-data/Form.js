@@ -48,7 +48,7 @@ class Form extends Component {
 
     render() {
         
-        let { fields } = this.props;
+        let { fields, submit } = this.props;
 
         return(
             
@@ -70,7 +70,7 @@ class Form extends Component {
                 <input
                     className="btn btn-info container mt-3 mb-3"
                     type="submit"
-                    value="Submit"
+                    value={ submit }
                 >
                 </input>
             </form>

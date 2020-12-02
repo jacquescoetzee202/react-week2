@@ -49,6 +49,7 @@ class CreateArticle extends Component {
                             { label: "Article", name: "content", type: "text" },
                             { label: "Tags", name: "tags", type: "text" },
                         ]}
+                        submit="Create"
                     />
                 }
             </>

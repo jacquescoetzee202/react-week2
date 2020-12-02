@@ -27,6 +27,7 @@ function App() {
                 { label: "Telephone Number", name: "telephone", type: "tel" },
                 { label: "Date of Birth", name: "dob", type: "date" },
               ]}
+              submit="Submit"
             />
           </Route>
           <Route path="/news">

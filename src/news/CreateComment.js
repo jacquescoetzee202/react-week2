@@ -46,6 +46,7 @@ class CreateComment extends Component {
                             { label: "Email", name: "email", type: "email" },
                             { label: "Comment", name: "content", type: "text" },
                         ]}
+                        submit="Add Comment"
                     />
                 }
             </>
