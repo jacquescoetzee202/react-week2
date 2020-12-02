@@ -15,7 +15,6 @@ class Articles extends Component {
     componentDidMount() {
         axios.get("/articles").then(({data}) => {
             let articles = data.data;
-            console.log(articles);
             this.setState({
                 loaded: true,
                 articles: articles,
@@ -28,20 +27,22 @@ class Articles extends Component {
 
         return(
             <>
-                <p>{loaded ? articles[0].id : "Loading....." }</p>
-                <ul className="list-group">
-                    {articles.map((article, index) => {
-                        let { id, title, tags } = article;
-                        return (
-                            <Article
-                                id={ id }
-                                title={ title }
-                                tags={ tags }
-                                key={ index }
-                            />
-                        );
-                    })}
-                </ul>
+                <h1 className="p-3 mb-2 bg-info text-white" >Blogtastic</h1>
+                { !loaded ? <p>Loading....</p> : 
+                    <ul className="list-group">
+                        {articles.map((article, index) => {
+                            let { id, title, tags } = article;
+                            return (
+                                <Article
+                                    id={ id }
+                                    title={ title }
+                                    tags={ tags }
+                                    key={ index }
+                                />
+                            );
+                        })}
+                    </ul>
+                }
             </>
         );
     }
