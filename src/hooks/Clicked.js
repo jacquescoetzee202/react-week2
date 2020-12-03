@@ -2,11 +2,11 @@ import { useState } from "react";
 
 const Clicked = () => {
 
-    const [ clicked, setClicked ] = useState("Not clicked");
+    const [ clicked, setClicked ] = useState(false);
 
-    const handleClick = () => setClicked( "Clicked" );
+    const handleClick = () => setClicked(true);
 
-    return <p onClick={ handleClick }>{ clicked }</p>
+    return <p onClick={ handleClick }>{ clicked ? "Clicked" : "Not clicked" }</p>
 
 }
 

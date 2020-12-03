@@ -11,7 +11,7 @@ const Die = ({ sides }) => {
 
     return(
         <div
-            className="mt-3 border border-primary rounded-lg text-center align-text-middle"
+            className="mt-3 border border-primary rounded-lg text-center"
             onClick={ handleClick }
             style={{
                 height: 100,
