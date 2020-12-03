@@ -6,6 +6,7 @@ import StepCounter from "./StepCounter";
 import CatchMeIfYouCan from "./CatchMeIfYouCan";
 import RollCall from "./RollCall";
 import PasswordStrength from "./PasswordStrength";
+import TempConverter from "./TempConverter";
 
 const Hooks = () => {
     return(
@@ -18,6 +19,7 @@ const Hooks = () => {
             <CatchMeIfYouCan jump={ 100 } />
             <RollCall names={ names }/>
             <PasswordStrength />
+            <TempConverter />
         </>
     );
 }
