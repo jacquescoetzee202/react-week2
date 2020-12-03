@@ -4,7 +4,7 @@ const RollCall = ({ names }) => {
 
     const [ index, setIndex ] = useState(0);
 
-    const handleClick = () => setIndex( index === names.length -1 ? 0 : index + 1 );
+    const handleClick = () => setIndex( (index + 1) % names.length );
 
     return(
         <>
@@ -17,8 +17,6 @@ const RollCall = ({ names }) => {
                 Next
             </button>
         </>
-
-
     );
 }
 
