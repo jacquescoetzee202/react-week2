@@ -8,6 +8,7 @@ import RollCall from "./RollCall";
 import PasswordStrength from "./PasswordStrength";
 import TempConverter from "./TempConverter";
 import List from "./List";
+import Colours from "./Colours";
 
 const Hooks = () => {
     return(
@@ -22,6 +23,7 @@ const Hooks = () => {
             <PasswordStrength />
             <TempConverter />
             <List />
+            <Colours colours={ colours } />
         </>
     );
 }
@@ -37,4 +39,12 @@ const names = [
     "Katarina",
     "Hannah",
     "Martha"
+];
+
+let colours = [
+    "#C14412",
+    "#EBB31A",
+    "#8F5318",
+    "#009EAD",
+    "#395967",
 ];
