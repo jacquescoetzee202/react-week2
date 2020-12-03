@@ -8,6 +8,7 @@ import Articles from "./news/Articles";
 import Article from "./news/Article";
 import Header from "./Header";
 import CreateArticle from "./news/CreateArticle";
+import Hooks from "./hooks/Hooks";
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
               ]}
               submit="Submit"
             />
+          </Route>
+          <Route exact path="/hooks">
+            <Header text="Get Hooked"/>
+            <Hooks />
           </Route>
           <Route path="/news">
             <Header text="Blogtastic"/>
