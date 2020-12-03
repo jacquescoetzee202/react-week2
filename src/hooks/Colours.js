@@ -7,11 +7,10 @@ const Colours = ({ colours }) => {
     const handleClick = () => setIndex( index + 1 < colours.length ? index + 1 : 0);
 
     let hex = colours[index];
-    console.log(hex);
 
     return(
         <div
-            className="container mt-3"
+            className="mt-3"
             onClick={ handleClick }
             style={{
                 backgroundColor: hex,

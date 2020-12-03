@@ -9,6 +9,7 @@ import PasswordStrength from "./PasswordStrength";
 import TempConverter from "./TempConverter";
 import List from "./List";
 import Colours from "./Colours";
+import Die from "./Die";
 
 const Hooks = () => {
     return(
@@ -24,6 +25,7 @@ const Hooks = () => {
             <TempConverter />
             <List />
             <Colours colours={ colours } />
+            <Die sides={ 6 } />
         </>
     );
 }
