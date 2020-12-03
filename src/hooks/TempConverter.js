@@ -20,7 +20,7 @@ const TempConverter = () => {
     }
 
     return(
-        <form className="container">
+        <form>
             <label className="mt-3">
                 Fahrenheit
             </label>

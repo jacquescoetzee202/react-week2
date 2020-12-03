@@ -13,7 +13,7 @@ const CatchMeIfYouCan = ({ jump }) => {
             className="btn btn-danger"
             style={{
                 position: "relative",
-                top: position + 200,
+                top: position + -400,
             }}
         >
             Try Catch Me!

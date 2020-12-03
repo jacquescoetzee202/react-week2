@@ -7,6 +7,7 @@ import CatchMeIfYouCan from "./CatchMeIfYouCan";
 import RollCall from "./RollCall";
 import PasswordStrength from "./PasswordStrength";
 import TempConverter from "./TempConverter";
+import List from "./List";
 
 const Hooks = () => {
     return(
@@ -20,6 +21,7 @@ const Hooks = () => {
             <RollCall names={ names }/>
             <PasswordStrength />
             <TempConverter />
+            <List />
         </>
     );
 }

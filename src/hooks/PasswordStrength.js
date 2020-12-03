@@ -21,7 +21,7 @@ const PasswordStrength = () => {
     }
 
     return(
-        <form className="container">
+        <form>
             <label className="mt-3">
                 Password
             </label>
