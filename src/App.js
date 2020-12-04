@@ -9,6 +9,7 @@ import Article from "./news/Article";
 import Header from "./Header";
 import CreateArticle from "./news/CreateArticle";
 import Hooks from "./hooks/Hooks";
+import Reduce from "./reducers/Reduce";
 
 function App() {
   return (
@@ -34,6 +35,10 @@ function App() {
           <Route exact path="/hooks">
             <Header text="Get Hooked"/>
             <Hooks />
+          </Route>
+          <Route exact path="/reduce">
+            <Header text="R^3 = reduce, reduce, reduce"/>
+            <Reduce />
           </Route>
           <Route path="/news">
             <Header text="Blogtastic"/>
