@@ -29,7 +29,8 @@ const decrease = (state, step) => {
     }
 }
 
-const reducer = (state, { type, step, max } ) => {
+const reducer = (state, actions) => {
+    const { type, step, max } = actions;
     switch (type) {
         case "INCREASE" : return increase(state, step, max);
         case "DECREASE" : return decrease(state, step);

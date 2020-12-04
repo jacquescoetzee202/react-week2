@@ -10,8 +10,7 @@ const initialState = {
 
 // | reducer helper function
 
-const celcuisInput = ( event ) => {
-    const input = event.currentTarget.value;
+const celcuisInput = ( input ) => {
     const converted = input * 1.8 + 32;
     return {
         degsC: input,
@@ -19,8 +18,7 @@ const celcuisInput = ( event ) => {
     }
 }
 
-const fahrenheitInput = ( event ) => {
-    const input = event.currentTarget.value;
+const fahrenheitInput = ( input ) => {
     const converted = (input - 32) * (5/9) ;
     return {
         degsC: converted,
@@ -29,10 +27,11 @@ const fahrenheitInput = ( event ) => {
 }
 
 // | main reducer function
-const reducer = (state, {type, event}) => {
+const reducer = (state, actions) => {
+    const {type, input} = actions;
     switch (type) {
-        case "DEG_C_INPUT" : return celciusInput(event);
-        case "DEG_F_INPUT" : return fahrenheitInput(event);
+        case "DEG_C_INPUT" : return celciusInput(input);
+        case "DEG_F_INPUT" : return fahrenheitInput(input);
         default: return state;
 
 }
@@ -54,7 +53,7 @@ const TempConverter = () => {
                 type="number"
                 className="ml-2"
                 value={ fahrenheit }
-                onChange={ (event) => dispatch({ type: "DEG_C_INPUT", event: event }) }
+                onChange={ (event) => dispatch({ type: "DEG_C_INPUT", input: event.currentTarget.value }) }
                 />
             <label className="mt-3 ml-3">
                 Celcuis
@@ -63,7 +62,7 @@ const TempConverter = () => {
                 type="number"
                 className="ml-2"
                 value={ celcuis }
-                onChange={ (event) => dispatch({ type: "DEG_F_INPUT", event: event }) }
+                onChange={ (event) => dispatch({ type: "DEG_F_INPUT", input: event.currentTarget.value }) }
             />
         </form>
     );
