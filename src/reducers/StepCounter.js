@@ -45,9 +45,9 @@ const StepCounter = ({ max, step }) => {
 
     return(
         <>
-            <h1
+            <h4
                 className="mt-3"
-            >StepCount : { state.count }</h1>
+            >StepCount : { state.count }</h4>
             <button 
                 onClick={ () => dispatch({ type: "INCREASE", step: step, max: max }) }
                 type="button"

@@ -18,7 +18,7 @@ const Clicked = () => {
 
     let innerText = state.clicked ? "Clicked" : "Not clicked!";
 
-    return <p onClick={ () => dispatch({ type: "CLICK" }) } >{ innerText }</p>;
+    return <h4 onClick={ () => dispatch({ type: "CLICK" }) } >{ innerText }</h4>;
 }
 
 export default Clicked;

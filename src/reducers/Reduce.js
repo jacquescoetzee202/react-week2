@@ -1,3 +1,4 @@
+import TempConverter from "../hooks/TempConverter";
 import Clicked from "./Clicked";
 import StepCounter from "./StepCounter";
 
@@ -6,6 +7,7 @@ const Reduce = () => {
         <>
             <Clicked />
             <StepCounter max={ 100 } step={ 5 } />
+            <TempConverter />
         </>
     );
 }
