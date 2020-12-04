@@ -32,7 +32,7 @@ const fahrenheitInput = ( event ) => {
 const reducer = (state, {type, event}) => {
     switch (type) {
         case "DEG_C_INPUT" : return celciusInput(event);
-        case "DEG_F_INPUT" : return "hello";
+        case "DEG_F_INPUT" : return fahrenheitInput(event);
         default: return state;
 
 }
